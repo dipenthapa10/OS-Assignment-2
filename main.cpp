@@ -45,7 +45,7 @@ int main()
     vector<int> safe_seq;
     vector<int> work = available;
 
-    // Banker's Algorithm
+    // Here it is Banker's Algorithm
     for (int count = 0; count < n; count++)
     {
         bool found = false;
@@ -81,13 +81,13 @@ int main()
             break;
     }
 
-    // Output Available
+    // Output for  Available
     cout << "Available: ";
     for (int j = 0; j < m; j++)
         cout << available[j] << " ";
     cout << "\n";
 
-    // Check if safe
+    // Check weather it is safe
     bool safe = true;
     for (int i = 0; i < n; i++)
         if (!finish[i])

@@ -1,0 +1,46 @@
+
+## Program Description
+
+This program implements the Banker's Algorithm for deadlock avoidance in an operating system to determine whether
+a system is in a safe or unsafe state based on the allocation of resources to processes. 
+The algorithm uses the Allocation, Max, Need, and Available resource vectors to check if all
+processes can finish in some order without leading to deadlock.
+
+Here, this programs reads the Available resources, the allocation matrix  and the max matrix from an input.txt file .
+It then calculates the Need matrix using
+Need = Max - Allocation
+
+## Algorithm Overview 
+
+Here, the banker algorithm is used which is a resource allocaiton and deadlock avoidance algorithm. Here, it ensures
+that the resource allocated to processes never leads to a deadlock situation by carefully checking for
+"safe states" before granting resource requests.
+
+It is used for:
+- to ensure system never enter unsafe state 
+- to allow maximum resource utilization while maintaining safety
+- it provides guaranteed safe execution sequences
+
+How it works:
+So, here the program starts by reading information from the given input file i.e. input.txt.
+This includes the number of resources that are currenlty available, where the resouces already
+givecn to each process, and the maximum resources each process may need to finish it. Using all
+this information provided to it after that the program calculates how many more resources each 
+process still need. Where this is called Need.
+
+Then after calculating the need , the program checks the system step by step. It looks for any 
+more process that can finish its work with the currenlty available resources. When it finds 
+such a process , here it assumes that process completes its task and returns all the resources 
+it was holding back to the available.
+
+After that the program repeats this process, checking which processes can now finsih with 
+the newly available resouces. It continues this cycle until either all processes have finsihed
+which means wheather the system is safe or it reaches some point where some processes cannot 
+finish meaning the system is unsafe.
+
+Now, finally the program displays whether the system is in a safe state and shows the order 
+in which processes can safely execute if a safe sequence exists.
+
+And for this assignment it shows the system is safe and the the safe sequence it produces is:
+P3 → P4 → P1 → P2 → P0.
+
