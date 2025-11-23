@@ -15,8 +15,8 @@ input.txt — Input data file containing Available, Allocation, and Max matrices
 ## Usage Guide:
 - Make sure main.cpp and input.txt are in the same directory.
 - Compile the program using the following command:
-  g++ main.cpp -o output
-  ./output
+   -  g++ main.cpp -o output
+   - ./output
 
 
 
